@@ -1,0 +1,66 @@
+﻿@model IEnumerable<wa_citas_medicas.Dtos.QueryPacienteDto>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<div class="container mt-5">
+    <div class="card shadow rounded p-5  mx-auto">
+        <h1 class="text-center">Lista de Pacientes</h1>
+
+        <div class="mb-3">
+            <a href="/Paciente/Create" class="btn btn-primary">Registrar Paciente</a>
+            <a href="/Medico/Index" class="btn btn-success">Listado de Medicos</a>
+            <a href="/CitaMedica/Index" class="btn btn-info">Listado de Citas</a>
+        </div>
+
+        <hr />
+
+        <table id="tablaPacientes" class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Teléfono</th>
+                    <th>DNI</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var paciente in Model)
+                {
+                    <tr class="@(paciente.Estado == false ? "table-danger" : "")">
+                        <td>@paciente.Nombre</td>
+                        <td>@paciente.Apellido</td>
+                        <td>@paciente.Edad</td>
+                        <td>@paciente.Telefono</td>
+                        <td>@paciente.Dni</td>
+                        <td>@(paciente.Estado == true ? "Activo" : "Inactivo")</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Paciente", new { id = paciente.Pacienteid })" class="btn btn-sm btn-warning">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a href="/Home/MenuPrincipal" class="btn btn-dark">Menú Principal</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#tablaPacientes').DataTable({
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+                }
+            });
+        });
+    </script>
+</div>

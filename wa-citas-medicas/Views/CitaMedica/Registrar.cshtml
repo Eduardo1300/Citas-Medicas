@@ -1,0 +1,49 @@
+﻿@model wa_citas_medicas.Dtos.RegistroCitaMedicaDto
+
+@{
+    ViewData["Title"] = "Registrar Cita Médica";
+    var pacientes = ViewBag.Pacientes as List<SelectListItem>;
+    var medicos = ViewBag.Medicos as List<SelectListItem>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Registrar Cita Médica</h1>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <form method="post" action="/CitaMedica/Registrar" class="mt-4">
+        <div class="mb-3">
+            <label for="Pacienteid" class="form-label">Paciente</label>
+            <select id="Pacienteid" name="Pacienteid" class="form-select" required>
+                <option value="">-- Seleccione --</option>
+                @foreach (var item in pacientes)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Medicoid" class="form-label">Médico</label>
+            <select id="Medicoid" name="Medicoid" class="form-select" required>
+                <option value="">-- Seleccione --</option>
+                @foreach (var item in medicos)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Fecha" class="form-label">Fecha</label>
+            <input type="date" id="Fecha" name="Fecha" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar Cita</button>
+    </form>
+</div>

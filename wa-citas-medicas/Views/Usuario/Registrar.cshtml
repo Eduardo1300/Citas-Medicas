@@ -1,0 +1,51 @@
+﻿@model wa_citas_medicas.Dtos.RegistroUsuarioDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Registrar Usuario";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Registrar Usuario</h1>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <form method="post" action="/Usuario/Registrar" class="mt-4">
+        <div class="mb-3">
+            <label class="form-label">Nombre de Usuario</label>
+            <input asp-for="Nomusuario" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nombres</label>
+            <input asp-for="Nombres" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Apellidos</label>
+            <input asp-for="Apellidos" class="form-control" required />
+        </div>
+
+        <div class="form-check mb-3">
+            <input asp-for="Activo" class="form-check-input" />
+            <label class="form-check-label">Activo</label>
+        </div>
+
+        <button type="submit" class="btn btn-success">Registrar</button>
+    </form>
+</div>

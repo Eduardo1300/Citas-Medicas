@@ -1,0 +1,67 @@
+﻿@model IEnumerable<wa_citas_medicas.Dtos.QueryCitaMedicaDto>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<div class="container mt-5">
+    <div class="card shadow rounded p-5 mx-auto">
+        <h1 class="text-center">Lista de Citas Médicas</h1>
+
+        <div class="mb-3">
+            <a href="/CitaMedica/Registrar" class="btn btn-primary">Registrar Cita Médica</a>
+            <a href="/Medico/Index" class="btn btn-success">Listado de Médicos</a>
+            <a href="/Paciente/Index" class="btn btn-info">Listado de Pacientes</a>
+        </div>
+
+        <hr />
+
+        <table id="tablaCitas" class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Paciente</th>
+                    <th>Médico</th>
+                    <th>Especialidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cita in Model)
+                {
+                    <tr>
+                        <td>@cita.Fecha.ToString("dd-MM-yyyy")</td>
+                        <td>@cita.NombrePaciente @cita.ApellidoPaciente</td>
+                        <td>@cita.NombreMedico @cita.ApellidoMedico</td>
+                        <td>@cita.especialidad</td>
+                        <td>
+                            <a href="@Url.Action("EditarCita", "CitaMedica", new { id = cita.Citaid })" class="btn btn-sm btn-warning">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a href="/Home/MenuPrincipal" class="btn btn-dark">Menú Principal</a>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#tablaCitas').DataTable({
+            language: {
+                url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+            }
+        });
+    });
+</script>

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Menú Principal";
+}
+
+<h2 class="text-center my-4">Menú Principal</h2>
+
+<div class="d-flex justify-content-center gap-4 my-5 flex-wrap">
+
+    <form asp-action="EnviarListadoPaciente" method="post">
+        <button type="submit" class="btn btn-light shadow-lg p-4 d-flex flex-column align-items-center justify-content-center" style="width: 320px; height: 320px;">
+            <img src="https://www.sanpablo.com.pe/wp-content/uploads/2025/01/icono-servicios-aqp.png" alt="Pacientes" class="mb-2" style="width: 150px; height: 150px;" />
+            Pacientes
+        </button>
+    </form>
+
+    <form asp-action="EnviarListadoCitaMedica" method="post">
+        <button type="submit" class="btn btn-light shadow-lg p-4 d-flex flex-column align-items-center justify-content-center" style="width: 320px; height: 320px;">
+            <img src="https://test.clinicalavina.com/upload/records/image/1066239946131.png" alt="Citas Médicas" class="mb-2" style="width: 150px; height: 150px;" />
+            Citas Médicas
+        </button>
+    </form>
+
+    <form asp-action="EnviarListadoMedico" method="post">
+        <button type="submit" class="btn btn-light shadow-lg p-4 d-flex flex-column align-items-center justify-content-center" style="width: 320px; height: 320px;">
+            <img src="https://www.sanpablo.com.pe/wp-content/uploads/2025/01/icono-staff-medico-aqp.png" alt="Médicos" class="mb-2" style="width: 150px; height: 150px;" />
+            Médicos
+        </button>
+    </form>
+
+</div>

@@ -1,0 +1,53 @@
+﻿@model wa_citas_medicas.Dtos.RegistroCitaMedicaDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Editar Cita Médica";
+}
+
+<h2>@ViewData["Title"]</h2>
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+
+<form asp-action="EditarCita" method="post">
+    <input type="hidden" asp-for="Citaid" />
+
+    <div class="form-group">
+        <label asp-for="Fecha">Fecha de la Cita</label>
+        <input asp-for="Fecha" class="form-control" type="date"  />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Pacienteid">Paciente</label>
+        <select asp-for="Pacienteid" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Pacientes, "Value", "Text", Model.Pacienteid))">
+            <option value="">Seleccione un paciente</option>
+        </select>
+        <span asp-validation-for="Pacienteid" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Medicoid">Médico</label>
+        <select asp-for="Medicoid" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Medicos, "Value", "Text", Model.Medicoid))">
+            <option value="">Seleccione un médico</option>
+        </select>
+        <span asp-validation-for="Medicoid" class="text-danger"></span>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

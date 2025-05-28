@@ -1,0 +1,48 @@
+﻿@model wa_citas_medicas.Dtos.RegistroPacienteDto
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Edit Patient</h1>
+
+    <form asp-action="Edit" method="post" class="mt-4">
+        <input type="hidden" asp-for="Pacienteid" />
+
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Name</label>
+            <input type="text" asp-for="Nombre" class="form-control" id="Nombre" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Apellido" class="form-label">Last Name</label>
+            <input type="text" asp-for="Apellido" class="form-control" id="Apellido" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Edad" class="form-label">Age</label>
+            <input type="number" asp-for="Edad" class="form-control" id="Edad" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Telefono" class="form-label">Phone</label>
+            <input type="text" asp-for="Telefono" class="form-control" id="Telefono" maxlength="9">
+        </div>
+
+        <div class="mb-3">
+            <label for="Estado" class="form-label">Active</label>
+            <select asp-for="Estado" class="form-select" id="Estado" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Dni" class="form-label">DNI</label>
+            <input type="text" asp-for="Dni" class="form-control" id="Dni" maxlength="15" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
