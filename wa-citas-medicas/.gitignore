@@ -1,0 +1,32 @@
+# Archivos de Visual Studio
+.vs/
+*.user
+*.suo
+*.vsidx
+*.vssscc
+*.cache
+*.log
+
+# Carpetas de compilación
+bin/
+obj/
+
+# Archivos generados por la base de datos
+*.mdf
+*.ldf
+*.db
+
+# Archivos de configuración local
+*.local.json
+*.env
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Otros
+*.ncrunchproject
+*.ncrunchsolution
+_ReSharper*/
+*.resharper
+*.DotSettings.user

@@ -1,0 +1,25 @@
+# Archivos temporales de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos de entorno
+.env
+
+# Archivos temporales de editores o IDEs
+.vscode/
+*.user
+*.suo
+
+# Node modules si llegas a tener frontend en la raíz
+node_modules/
+
+# Archivos de bases de datos locales (si no quieres subirlas)
+*.mdf
+*.ldf
+*.db
+
+# Otros
+*.tmp

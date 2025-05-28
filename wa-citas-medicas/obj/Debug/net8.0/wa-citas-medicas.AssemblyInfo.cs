@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wa-citas-medicas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3104912092311697b6ff0240e8e8e4ab994c29a")]
 [assembly: System.Reflection.AssemblyProductAttribute("wa-citas-medicas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wa-citas-medicas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4011,11 +4011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\3D Objects\\citas medicas\\wa-citas-medicas\\wa-citas-medicas.csproj",
+      "projectUniqueName": "C:\\Users\\User\\3D Objects\\citas-medicas\\wa-citas-medicas\\wa-citas-medicas.csproj",
       "projectName": "wa-citas-medicas",
-      "projectPath": "C:\\Users\\User\\3D Objects\\citas medicas\\wa-citas-medicas\\wa-citas-medicas.csproj",
+      "projectPath": "C:\\Users\\User\\3D Objects\\citas-medicas\\wa-citas-medicas\\wa-citas-medicas.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\3D Objects\\citas medicas\\wa-citas-medicas\\obj\\",
+      "outputPath": "C:\\Users\\User\\3D Objects\\citas-medicas\\wa-citas-medicas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
