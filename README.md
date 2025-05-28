@@ -68,3 +68,12 @@ A continuación se muestran las principales interfaces del sistema:
 ![Vista del sistema - Lista de citas médicas](./wa-citas-medicas/wwwroot/assets/lista_cita_medica.png)
 ![Vista del sistema - Registro de citas médicas](./wa-citas-medicas/wwwroot/assets/registro_cita_medica.png)
 
+
+👨‍💻 Autor
+
+Christopher Eduardo Valdivia Baca
+📍 Estudiante de Computación e Informática — Cibertec Callao
+🔗 LinkedIn
+📧 eduardovaldivia130@outlook.es
+📱 +51 953 587 619
+
